@@ -1,0 +1,3 @@
+[submodule "gTerminal-project.github.io"]
+	path = terminal
+	url = https://github.com/gTerminal-project/gTerminal-project.github.io.git
