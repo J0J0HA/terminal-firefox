@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "> Terminal",
+  "version": "1.0",
+
+  "description": "Sets Terminal as default page.",
+
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+  "chrome_url_overrides" : {
+    "newtab": "redirect.html"
+  },
+  "chrome_settings_overrides" : {
+    "homepage": "redirect.html"
+   },
+  "content_scripts": [
+    {
+        "matches": ["https://j0j0ha.github.io/terminal/"],
+        "js": ["provideData.js"]
+    }
+  ]
+}
