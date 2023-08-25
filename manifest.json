@@ -9,15 +9,22 @@
     "48": "icons/border-48.png"
   },
   "chrome_url_overrides" : {
-    "newtab": "redirect.html"
+    "newtab": "iframed.html"
   },
   "chrome_settings_overrides" : {
-    "homepage": "redirect.html"
+    "homepage": "iframed.html"
    },
   "content_scripts": [
     {
-        "matches": ["https://j0j0ha.github.io/terminal/"],
-        "js": ["provideData.js"]
+        "all_frames": true,
+        "matches": ["*://terminal-center.github.io/terminal*"],
+        "js": ["injector.js"],
+        "run_at": "document_end"
+    },
+    {
+        "matches": ["*://*/*"],
+        "js": ["popup.js"],
+        "run_at": "document_idle"
     }
   ]
 }
