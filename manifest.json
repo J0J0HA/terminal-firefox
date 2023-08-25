@@ -1,30 +1,42 @@
 {
-  "manifest_version": 2,
-  "name": "> Terminal",
-  "version": "1.0",
-
-  "description": "Sets Terminal as default page.",
-
-  "icons": {
-    "48": "icons/border-48.png"
-  },
-  "chrome_url_overrides" : {
-    "newtab": "iframed.html"
-  },
-  "chrome_settings_overrides" : {
-    "homepage": "iframed.html"
-   },
-  "content_scripts": [
-    {
-        "all_frames": true,
-        "matches": ["*://terminal-center.github.io/terminal*"],
-        "js": ["injector.js"],
-        "run_at": "document_end"
+    "manifest_version": 3,
+    "author":"",    
+    "name": "gTerminal",
+    "version": "1.0",
+    "description": "Use gTerminal to navigate through the web and your computer faster! Through the ability to use different modules you can modify gTerminal to fit your needs perfectly. Note that this will change your default search, your newtab page and homepage to lead to a local clone of gTerminal.",
+    "chrome_url_overrides": {
+        "newtab": "terminal/index.html"
     },
-    {
-        "matches": ["*://*/*"],
-        "js": ["popup.js"],
-        "run_at": "document_idle"
-    }
-  ]
+    "chrome_settings_overrides": {
+        "homepage": "https://gterminal-project.github.io/",
+        "search_provider": {
+            "name": "gTerminal",
+            "keyword": "gT",
+            "search_url": "https://gTerminal-project.github.io/?cmd={searchTerms}",
+            "is_default": true,
+            "encoding": "UTF-8"
+        }
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "terminal/index.html"
+            ],
+            "matches": [
+                "https://gterminal-project.github.io/*"
+            ]
+        }
+    ],
+    "content_scripts": [
+        {
+            "all_frames": true,
+            "matches": [
+                "https://gterminal-project.github.io/*"
+            ],
+            "js": [
+                "redirect.js"
+            ],
+            "run_at": "document_start"
+        }
+    ]
 }
