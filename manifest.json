@@ -8,7 +8,10 @@
         "*://gterminal.is-a.dev/*"
     ],
     "icons": {
-        "512": "terminal/assets/logos/gTerminal.png"
+        "16": "assets/favicons/favicon-16x16.png",
+        "32": "assets/favicons/favicon-32x32.png",
+        "192": "assets/favicons/android-chrome-192x192.png",
+        "512": "assets/logos/gTerminal.png"
     },
     "permissions": [],
     "chrome_url_overrides": {
@@ -18,8 +21,9 @@
         "homepage": "https://gterminal.is-a.dev/",
         "search_provider": {
             "name": "gTerminal",
-            "keyword": "gT",
+            "keyword": "gt",
             "search_url": "https://gterminal.is-a.dev/?cmd={searchTerms}",
+            "favicon": "https://gterminal.is-a.dev/favicon.ico",
             "is_default": true,
             "encoding": "UTF-8"
         }
@@ -27,7 +31,8 @@
     "web_accessible_resources": [
         {
             "resources": [
-                "views/terminal/index.html"
+                "views/terminal/index.html",
+                "modifications.js"
             ],
             "matches": [
                 "*://gterminal.is-a.dev/*"
@@ -53,7 +58,7 @@
             "js": [
                 "inject.js"
             ],
-            "run_at": "document_end"
+            "run_at": "document_idle"
         }
     ],
     "browser_specific_settings": {
