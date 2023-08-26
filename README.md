@@ -1,3 +1,5 @@
+[![CodeQL](https://github.com/gTerminal-project/Browser-Extension/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/gTerminal-project/Browser-Extension/actions/workflows/github-code-scanning/codeql)
+
 # Browser-Extension
 
 This browser extension sets gTerminal as your default search, newtab page and homepage.  
