@@ -1,18 +1,18 @@
 {
     "manifest_version": 3,
-    "author":"",    
+    "author": "gTerminal-project",
     "name": "gTerminal",
-    "version": "1.0",
-    "description": "Use gTerminal to navigate through the web and your computer faster! Through the ability to use different modules you can modify gTerminal to fit your needs perfectly. Note that this will change your default search, your newtab page and homepage to lead to a local clone of gTerminal.",
+    "version": "1.2",
+    "description": "Use gTerminal as default search, newtab-page and homepage to navigate through the web faster! Through the ability to use different modules you can modify gTerminal to fit your needs perfectly.",
     "chrome_url_overrides": {
         "newtab": "terminal/index.html"
     },
     "chrome_settings_overrides": {
-        "homepage": "https://gterminal-project.github.io/",
+        "homepage": "https://gterminal.is-a.dev/",
         "search_provider": {
             "name": "gTerminal",
             "keyword": "gT",
-            "search_url": "https://gTerminal-project.github.io/?cmd={searchTerms}",
+            "search_url": "https://gterminal.is-a.dev/?cmd={searchTerms}",
             "is_default": true,
             "encoding": "UTF-8"
         }
@@ -23,7 +23,7 @@
                 "terminal/index.html"
             ],
             "matches": [
-                "https://gterminal-project.github.io/*"
+                "https://gterminal.is-a.dev/*"
             ]
         }
     ],
@@ -31,12 +31,17 @@
         {
             "all_frames": true,
             "matches": [
-                "https://gterminal-project.github.io/*"
+                "https://gterminal.is-a.dev/*"
             ],
             "js": [
                 "redirect.js"
             ],
             "run_at": "document_start"
         }
-    ]
+    ],
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "gTerminal@gTerminal-project.github.io"
+        }
+    }
 }
