@@ -2,10 +2,17 @@
     "manifest_version": 3,
     "author": "gTerminal-project",
     "name": "gTerminal",
-    "version": "1.2",
+    "version": "1.3",
     "description": "Use gTerminal as default search, newtab-page and homepage to navigate through the web faster! Through the ability to use different modules you can modify gTerminal to fit your needs perfectly.",
+    "host_permissions": [
+        "*://gterminal.is-a.dev/*"
+    ],
+    "icons": {
+        "512": "terminal/assets/logos/gTerminal.png"
+    },
+    "permissions": [],
     "chrome_url_overrides": {
-        "newtab": "terminal/index.html"
+        "newtab": "views/terminal/index.html"
     },
     "chrome_settings_overrides": {
         "homepage": "https://gterminal.is-a.dev/",
@@ -20,23 +27,33 @@
     "web_accessible_resources": [
         {
             "resources": [
-                "terminal/index.html"
+                "views/terminal/index.html"
             ],
             "matches": [
-                "https://gterminal.is-a.dev/*"
+                "*://gterminal.is-a.dev/*"
             ]
         }
     ],
     "content_scripts": [
         {
-            "all_frames": true,
+            "all_frames": false,
             "matches": [
-                "https://gterminal.is-a.dev/*"
+                "*://gterminal.is-a.dev/*"
             ],
             "js": [
                 "redirect.js"
             ],
             "run_at": "document_start"
+        },
+        {
+            "all_frames": true,
+            "matches": [
+                "*://gterminal.is-a.dev/*"
+            ],
+            "js": [
+                "inject.js"
+            ],
+            "run_at": "document_end"
         }
     ],
     "browser_specific_settings": {
