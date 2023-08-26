@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    padding: 10px;
+    background-color: black;
+    font-family: monospace;
+    font-size: 23px;
+    color: lime;
+}
+
+.hide {
+    display: none;
+}
+
+a {
+    cursor: pointer;
+    padding-inline: 5px;
+    color: black;
+    border: none;
+    background-color: lime;
+    font-family: monospace;
+    border-radius: 5px;
+}
+
+iframe {
+    border: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100dvw;
+    height: 100dvh;
+}

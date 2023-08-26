@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permission Notice</title>
+
+    <link rel="stylesheet" href="/views/style.css">
+    <script src="script.js"></script>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+</head>
+
+<body>
+    <section id="welcome">
+        Welcome to gTerminal!
+        <br>
+        <br>
+    </section>
+    <section id="permissions-request">
+        To operate correctly, this plugin needs access to "*://gterminal.is-a.dev/".
+        <br>
+        <br>
+        Press <a id="grant-access">here</a> to grant access.
+    </section>
+    <section id="permissions-rejected" class="hide">
+        It seems like you didn't give access to "://gterminal.is-a.dev/".
+        <br>
+        To operate correctly, this plugin needs access to "*://gterminal.is-a.dev/".
+        <br>
+        <br>
+        Press <a id="grant-access-retry">here</a> to grant access.
+        <br>
+        <br>
+        If you don't want to give access to "://gterminal.is-a.dev/", this plugin will not work correctly.
+    </section>
+    <section id="permissions-accepted" class="hide">
+        Thank you! You can now start browsing with gTerminal.
+        <br>
+        <br>
+        Press <a id="open-gTerminal">here</a> to open gTerminal.
+    </section>
+    <section id="redirect-accepted" class="hide">
+        Please wait while you are being redirected to gTerminal...
+    </section>
+</body>
+
+</html>
