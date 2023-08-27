@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 10px;
     background-color: black;
-    font-family: monospace;
+    font-family: "Courier Prime", monospace;
     font-size: 23px;
     color: lime;
 }
