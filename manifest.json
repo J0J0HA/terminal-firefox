@@ -21,7 +21,7 @@
         "homepage": "https://gterminal.is-a.dev/",
         "search_provider": {
             "name": "gTerminal",
-            "keyword": "gt",
+            "keyword": "g",
             "search_url": "https://gterminal.is-a.dev/?cmd={searchTerms}",
             "favicon": "https://gterminal.is-a.dev/favicon.ico",
             "is_default": true,
