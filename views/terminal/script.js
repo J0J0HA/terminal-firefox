@@ -2,18 +2,13 @@ const page = (window.location.hash.substring(1) || "/");
 
 let platform = "unknown";
 
-let trusted_resource = false;
-
 if (typeof browser == "undefined" && typeof chrome != "undefined") {
     var browser = chrome;
     platform = "chrome";
 };
 
 window.onmessage = (event) => {
-    if (event.data.init) {
-        trusted_resource = true;
-    }
-    else if (event.data.open) {
+    if (event.data.open) {
         window.location.href = event.data.open;
     }
     else if (event.data.set_title) {

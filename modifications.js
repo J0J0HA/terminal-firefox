@@ -9,7 +9,3 @@ window.setTitle = (title) => {
         no_content: document.querySelector("#title").innerText == ""
     }, "*");
 };
-
-window.top.postMessage({
-    init: true
-}, "*");
