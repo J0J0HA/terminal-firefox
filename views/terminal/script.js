@@ -1,11 +1,11 @@
-const page = (window.location.hash.substring(1) || "/");
+const page = window.location.hash.substring(1) || "/";
 
 let platform = "unknown";
 
 if (typeof browser == "undefined" && typeof chrome != "undefined") {
   var browser = chrome;
   platform = "chrome";
-};
+}
 
 window.onmessage = (event) => {
   if (event.data.open) {
@@ -22,7 +22,7 @@ window.onmessage = (event) => {
 document.addEventListener("DOMContentLoaded", () => {
   if (page.startsWith("/modules/")) {
     document.body.innerText =
-        "In the future, here should be an install helper. For now, I can only say:\n";
+      "In the future, here should be an install helper. For now, I can only say:\n";
     if (page.endsWith(".js")) {
       document.body.innerText += "This is a module resource.";
     } else if (page.endsWith(".json")) {
@@ -34,13 +34,14 @@ document.addEventListener("DOMContentLoaded", () => {
     (async () => {
       const permissions = await browser.permissions.getAll();
       if (permissions.origins.indexOf("*://gterminal.is-a.dev/*")) {
-        window.location.href =
-            browser.runtime.getURL("/views/install/index.html");
+        window.location.href = browser.runtime.getURL(
+          "/views/install/index.html",
+        );
       } else {
         const iframe = document.createElement("iframe");
         iframe.src = "https://gterminal.is-a.dev" + page;
         document.body.appendChild(iframe);
-      };
+      }
     })();
   }
 });
